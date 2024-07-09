@@ -1,0 +1,49 @@
+diff --git a/src/bool.mli b/src/bool.mli
+index 43ed752..1f74209 100644
+--- a/src/bool.mli
++++ b/src/bool.mli
+@@ -30,7 +30,7 @@ external select
+   -> ('a[@local_opt])
+   -> ('a[@local_opt])
+   -> ('a[@local_opt])
+-  = "caml_csel_value"
++  = "caml_csel_value_base"
+   [@@noalloc] [@@no_effects] [@@no_coeffects] [@@builtin]
+ 
+ module Non_short_circuiting : sig
+diff --git a/src/bool0.ml b/src/bool0.ml
+index 0994b68..b0afd13 100644
+--- a/src/bool0.ml
++++ b/src/bool0.ml
+@@ -3,5 +3,5 @@ external select
+   -> ('a[@local_opt])
+   -> ('a[@local_opt])
+   -> ('a[@local_opt])
+-  = "caml_csel_value"
++  = "caml_csel_value_base"
+   [@@noalloc] [@@no_effects] [@@no_coeffects] [@@builtin]
+diff --git a/src/bool0.mli b/src/bool0.mli
+index 0994b68..b0afd13 100644
+--- a/src/bool0.mli
++++ b/src/bool0.mli
+@@ -3,5 +3,5 @@ external select
+   -> ('a[@local_opt])
+   -> ('a[@local_opt])
+   -> ('a[@local_opt])
+-  = "caml_csel_value"
++  = "caml_csel_value_base"
+   [@@noalloc] [@@no_effects] [@@no_coeffects] [@@builtin]
+diff --git a/src/int_math_stubs.c b/src/int_math_stubs.c
+index 4b973a3..d7aae0b 100644
+--- a/src/int_math_stubs.c
++++ b/src/int_math_stubs.c
+@@ -195,7 +195,7 @@ CAMLprim value Base_int_math_nativeint_ctz(value v) {
+   return Val_int(Base_int_math_nativeint_ctz_unboxed(Nativeint_val(v)));
+ }
+ 
+-CAMLprim CAMLweakdef value caml_csel_value(value v_cond, value v_true,
+-                                           value v_false) {
++CAMLprim CAMLweakdef value caml_csel_value_base(value v_cond, value v_true,
++                                                value v_false) {
+   return (Bool_val(v_cond) ? v_true : v_false);
+ }
