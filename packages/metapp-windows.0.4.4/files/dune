@@ -1,0 +1,7 @@
+(dirs)
+
+(library
+ (name metapp_ppx)
+ (public_name metapp.ppx)
+ (libraries ppxlib)
+ (kind ppx_rewriter))
