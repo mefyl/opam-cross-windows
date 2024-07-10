@@ -1,0 +1,54 @@
+opam-version: "2.0"
+maintainer: ["Hannes Mehnert <hannes@mehnert.org>"]
+authors: [
+  "Hannes Mehnert <hannes@mehnert.org>" "David Kaloper <dk505@cam.ac.uk>"
+]
+license: "BSD-2-Clause"
+tags: "org:mirage"
+homepage: "https://github.com/mirleft/ocaml-x509"
+doc: "https://mirleft.github.io/ocaml-x509/doc"
+bug-reports: "https://github.com/mirleft/ocaml-x509/issues"
+depends: [
+  "ocaml-windows" {>= "4.08.0"}
+  "dune" {>= "1.2"}
+  "cstruct-windows" {>= "6.0.0"}
+  "asn1-combinators-windows" {>= "0.2.0" & < "0.3.0"}
+  "ptime-windows"
+  "base64-windows" {>= "3.3.0"}
+  "mirage-crypto-windows" {< "1.0.0"}
+  "mirage-crypto-pk-windows" {< "1.0.0"}
+  "mirage-crypto-ec-windows" {>= "0.10.7" & < "1.0.0"}
+  "mirage-crypto-rng-windows" {< "1.0.0"}
+  "fmt-windows" {>= "0.8.7"}
+  "gmap-windows" {>= "0.3.0"}
+  "domain-name-windows" {>= "0.3.0"}
+  "logs-windows"
+  "pbkdf-windows"
+  "ipaddr-windows" {>= "5.2.0"}
+]
+conflicts: [
+  "result-windows" {< "1.5"}
+]
+build: [
+  ["dune" "build" "-x" "windows" "-p" "x509" "-j" jobs]
+]
+dev-repo: "git+https://github.com/mirleft/ocaml-x509.git"
+synopsis: "Public Key Infrastructure (RFC 5280, PKCS) purely in OCaml"
+description: """
+X.509 is a public key infrastructure used mostly on the Internet.  It consists
+of certificates which include public keys and identifiers, signed by an
+authority. Authorities must be exchanged over a second channel to establish the
+trust relationship. This library implements most parts of RFC5280 and RFC6125.
+The Public Key Cryptography Standards (PKCS) defines encoding and decoding
+(in ASN.1 DER and PEM format), which is also implemented by this library -
+namely PKCS 1, PKCS 5, PKCS 7, PKCS 8, PKCS 9, PKCS 10, and PKCS 12.
+"""
+url {
+  src:
+    "https://github.com/mirleft/ocaml-x509/releases/download/v0.16.5/x509-0.16.5.tbz"
+  checksum: [
+    "sha256=149e25a5fea37f619fb2690bee5c00f01c9dcf31d335f8ffcaab39a7538ccd99"
+    "sha512=6dd494dba799eab7edde2af1b63bac6035bf4ae06f3a36dd4fa9abcd13d0c3fe3e93dc5848b65405dc5401b1755fd30c71482cb91f7495bc9cfb7c5bf15ef6d7"
+  ]
+}
+x-commit-hash: "b00656d2952282323604765d504dfea067b17879"
