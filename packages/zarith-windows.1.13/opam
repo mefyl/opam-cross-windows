@@ -11,7 +11,7 @@ build-env: [
   OCAMLFIND_TOOLCHAIN = "windows"
 ]
 build: [
-  ["env" "CFLAGS='%{gmp-sys-windows:cflags}%'" "LDFLAGS='%{gmp-sys-macos:ldflags}%'" "./configure" "--installdir" "%{prefix}%/macos-sysroot/lib" "--ocamllibdir" "%{prefix}%/macos-sysroot/lib/ocaml"]
+  ["env" "CFLAGS='%{gmp-sys-windows:cflags}%'" "LDFLAGS='%{gmp-sys-windows:ldflags}%'" "./configure" "--installdir" "%{prefix}%/windows-sysroot/lib" "--ocamllibdir" "%{prefix}%/windows-sysroot/lib/ocaml"]
   [make]
 ]
 install: [

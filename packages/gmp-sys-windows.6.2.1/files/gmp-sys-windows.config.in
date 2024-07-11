@@ -1,0 +1,2 @@
+cflags: "-I%{prefix}%/windows-deps/gmp/include"
+ldflags: "-L%{prefix}%/windows-deps/gmp/lib"

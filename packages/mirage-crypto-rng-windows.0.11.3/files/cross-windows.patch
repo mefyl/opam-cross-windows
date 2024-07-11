@@ -1,0 +1,13 @@
+diff --git a/rng/unix/mc_getrandom_stubs.c b/rng/unix/mc_getrandom_stubs.c
+index 82887dd..36cf367 100644
+--- a/rng/unix/mc_getrandom_stubs.c
++++ b/rng/unix/mc_getrandom_stubs.c
+@@ -57,7 +57,7 @@ void raw_getrandom (uint8_t *data, uint32_t len) {
+  * have decided to go with the more modern Windows API with bcrypt,
+  * and make Windows 10 our minimum supported version of mirage-crypto.
+  */
+-#include <Windows.h>
++#include <windows.h>
+ #include <ntstatus.h>
+ #include <bcrypt.h>
+ 

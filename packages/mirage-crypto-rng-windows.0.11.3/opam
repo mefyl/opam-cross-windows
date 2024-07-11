@@ -9,6 +9,7 @@ authors: [
 maintainer: "Hannes Mehnert <hannes@mehnert.org>"
 license: "ISC"
 synopsis: "A cryptographically secure PRNG"
+patches: ["cross-windows.patch"]
 build: [
   ["dune" "build" "-x" "windows" "-p" "mirage-crypto-rng" "-j" jobs]
 ]
