@@ -1,0 +1,39 @@
+opam-version: "2.0"
+maintainer: "Jane Street developers"
+authors: ["Jane Street Group, LLC"]
+homepage: "https://github.com/janestreet/core_kernel"
+bug-reports: "https://github.com/janestreet/core_kernel/issues"
+dev-repo: "git+https://github.com/janestreet/core_kernel.git"
+doc:
+  "https://ocaml.janestreet.com/ocaml-core/latest/doc/core_kernel/index.html"
+license: "MIT"
+build: [
+  ["dune" "build" "-x" "windows" "-p" "core_kernel" "-j" jobs]
+]
+depends: [
+  "ocaml-windows" {>= "5.1.0"}
+  "base-windows" {>= "v0.17" & < "v0.18"}
+  "core-windows" {>= "v0.17" & < "v0.18"}
+  "int_repr-windows" {>= "v0.17" & < "v0.18"}
+  "ppx_jane-windows" {>= "v0.17" & < "v0.18"}
+  "ppx_optcomp" {>= "v0.17" & < "v0.18"}
+  "ppx_optcomp-windows" {>= "v0.17" & < "v0.18"}
+  "uopt-windows" {>= "v0.17" & < "v0.18"}
+  "base-threads-windows"
+  "dune" {>= "3.11.0"}
+]
+available: arch != "arm32" & arch != "x86_32"
+synopsis: "Industrial strength alternative to OCaml's standard library"
+description: """
+The Core suite of libraries is an industrial strength alternative to
+OCaml's standard library that was developed by Jane Street, the
+largest industrial user of OCaml.
+
+Core_kernel is the system-independent part of Core.
+"""
+url {
+  src:
+    "https://github.com/janestreet/core_kernel/archive/refs/tags/v0.17.0.tar.gz"
+  checksum:
+    "sha256=fd2b8c6715794df7a810a62b226f53720f211cd344b4afc9fab0498796d6b466"
+}
