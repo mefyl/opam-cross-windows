@@ -16,7 +16,7 @@ depends: [
   "ocaml-windows" {>= "4.08"}
   "ocplib-endian-windows"
 ]
-depopts: ["base-threads-windows" "base-unix-macos" "conf-libev-macos"]
+depopts: ["base-threads-windows" "base-unix-windows" "conf-libev-windows"]
 build: [
   ["dune" "build" "-x" "windows" "-p" "lwt" "-j" jobs]
 ]

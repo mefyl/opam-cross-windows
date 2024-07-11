@@ -22,21 +22,12 @@ homepage: "https://erratique.ch/software/mtime"
 doc: "https://erratique.ch/software/mtime/doc/"
 bug-reports: "https://github.com/dbuenzli/mtime/issues"
 depends: [
+  "dune"
   "ocaml-windows" {>= "4.08.0"}
-  "ocamlfind" {build}
-  "ocamlbuild" {build & != "0.9.0"}
-  "topkg" {build & >= "1.0.3"}
-]
-build: [
-  "ocaml" "pkg/pkg.ml" "build" "--toolchain" "windows" "--dev-pkg" "%{dev}%"
-]
-dev-repo: "git+https://erratique.ch/repos/mtime.git"
-url {
-  src: "https://erratique.ch/software/mtime/releases/mtime-2.0.0.tbz"
-  checksum:
-    "sha512=2ebec45218901c08f73420aa3318c506f155b6c0df713e9856682e59d3246696821ea477ce3682af0bf4cafd0491b1d66904f8c0256e2cf831e93a0aea322f04"
-}
-install: [
-  ["opam-installer" "--prefix=%{prefix}%/windows-sysroot" "mtime.install"]
 ]
 build-env: [MTIME_OS = "Darwin\n"]
+build: [ "dune" "build" "-p" "mtime" "-j" jobs "@install" "-x" "windows" ]
+dev-repo: "git+https://erratique.ch/repos/mtime.git"
+url {
+  src: "git+https://github.com/dune-universe/mtime#dune-universe-v2.0.0"
+}
