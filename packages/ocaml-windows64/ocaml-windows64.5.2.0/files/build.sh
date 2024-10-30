@@ -28,6 +28,8 @@ make ocamllex OCAMLRUN=ocamlrun NEW_OCAMLRUN=ocamlrun OCAMLYACC=ocamlyacc CAMLC=
 make coldstart OCAMLRUN=ocamlrun NEW_OCAMLRUN=ocamlrun
 make runtime/libasmrun.a
 
+exit 42
+
 make library otherlibs opt ocamlnat ocaml ocamldoc ocamldebugger \
   OCAMLRUN=ocamlrun NEW_OCAMLRUN=ocamlrun \
   OPTCOMPILER="${PWD}/ocamlopt.exe" \
