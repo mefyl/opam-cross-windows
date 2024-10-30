@@ -42,7 +42,7 @@ echo "FLEXDLL_DIR: "
 echo $FLEXDLL_DIR
 echo "DEBUG END"
 
-make library otherlibs opt ocamlnat ocaml ocamldoc ocamldebugger \
+make library otherlibs opt ocamlnat ocaml ocamldoc ocamldoc.opt ocamldebugger \
   OCAMLRUN=ocamlrun NEW_OCAMLRUN=ocamlrun \
   OPTCOMPILER="${PWD}/ocamlopt.exe" \
   MKLIB="ocamlrun \"${PWD}/tools/ocamlmklib.exe\"" \
