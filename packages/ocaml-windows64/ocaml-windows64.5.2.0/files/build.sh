@@ -28,6 +28,12 @@ make ocamllex OCAMLRUN=ocamlrun NEW_OCAMLRUN=ocamlrun OCAMLYACC=ocamlyacc CAMLC=
 make coldstart OCAMLRUN=ocamlrun NEW_OCAMLRUN=ocamlrun
 make runtime/libasmrun.a
 
+echo "DEBUG START"
+echo "ocamlrun: "
+echo `which ocamlrun`
+echo "ocamlmklib.exe: "
+echo `ls -la "${PWD}/tools/ocamlmklib.exe"`
+echo "DEBUG END"
 exit 42
 
 make library otherlibs opt ocamlnat ocaml ocamldoc ocamldebugger \
