@@ -1,8 +1,8 @@
 diff --git a/middle_end/closure/closure.ml b/middle_end/closure/closure.ml
-index b4095b7237..62d67b17d7 100644
+index 880773fbac..582d4fef39 100644
 --- a/middle_end/closure/closure.ml
 +++ b/middle_end/closure/closure.ml
-@@ -1080,9 +1080,9 @@ let rec close ({ backend; fenv; cenv ; mutable_vars } as env) lam =
+@@ -1058,9 +1058,9 @@ let rec close ({ backend; fenv; cenv ; mutable_vars } as env) lam =
          | Word_size -> make_const_int (8*B.size_int)
          | Int_size -> make_const_int (8*B.size_int - 1)
          | Max_wosize -> make_const_int ((1 lsl ((8*B.size_int) - 10)) - 1 )
@@ -15,11 +15,11 @@ index b4095b7237..62d67b17d7 100644
          | Backend_type ->
              make_const_int 0 (* tag 0 is the same as Native here *)
        in
-diff --git a/utils/config.common.ml b/utils/config.common.ml
-index d4850ffd50..182046f38b 100644
---- a/utils/config.common.ml
-+++ b/utils/config.common.ml
-@@ -64,11 +64,7 @@ let lazy_tag = 246
+diff --git a/utils/config.common.ml.in b/utils/config.common.ml.in
+index 15043dae84..35f43180d9 100644
+--- a/utils/config.common.ml.in
++++ b/utils/config.common.ml.in
+@@ -57,11 +57,7 @@ let lazy_tag = 246
  let max_young_wosize = 256
  let stack_threshold = 32 (* see runtime/caml/config.h *)
  let stack_safety_margin = 6
@@ -32,7 +32,7 @@ index d4850ffd50..182046f38b 100644
  type configuration_value =
    | String of string
    | Int of int
-@@ -107,7 +103,7 @@ let configuration_variables () =
+@@ -101,7 +97,7 @@ let configuration_variables () =
    p "ext_asm" ext_asm;
    p "ext_lib" ext_lib;
    p "ext_dll" ext_dll;
@@ -42,13 +42,13 @@ index d4850ffd50..182046f38b 100644
    p_bool "systhread_supported" systhread_supported;
    p "host" host;
 diff --git a/utils/config.generated.ml.in b/utils/config.generated.ml.in
-index 83d99afaa3..60708e888e 100644
+index 1d22c1d7f6..cac33e2079 100644
 --- a/utils/config.generated.ml.in
 +++ b/utils/config.generated.ml.in
-@@ -96,7 +96,7 @@ let asm_cfi_supported = @asm_cfi_supported@
+@@ -77,7 +77,7 @@ let asm_cfi_supported = @asm_cfi_supported@
  let with_frame_pointers = @frame_pointers@
  let reserved_header_bits = @reserved_header_bits@
-
+ 
 -let ext_exe = {@QS@|@exeext@|@QS@}
 +let ext_exe = ".exe"
  let ext_obj = "." ^ {@QS@|@OBJEXT@|@QS@}
