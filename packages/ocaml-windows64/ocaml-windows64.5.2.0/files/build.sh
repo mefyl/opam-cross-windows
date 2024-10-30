@@ -20,7 +20,7 @@ make runtime/sak.exe DEP_CC="${HOST}-gcc -MM" SAK_CC=cc SAK_CFLAGS= SAK_LINK='cc
 
 make ocamlopt ocamlc OCAMLRUN=ocamlrun NEW_OCAMLRUN=ocamlrun CAMLC="`which ocamlc`"
 make ocamlmklib OCAMLRUN=ocamlrun NEW_OCAMLRUN=ocamlrun CAMLC="`which ocamlc`"
-make boot/ocamlruns.exe
+make boot/ocamlrun.exe
 make runtime-all
 make -C stdlib OCAMLRUN=ocamlrun COMPILER="${PWD}/boot/ocamlc"
 make ocamlyacc OCAMLRUN=ocamlrun NEW_OCAMLRUN=ocamlrun
