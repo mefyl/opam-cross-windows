@@ -27,6 +27,7 @@ make ocamlyacc OCAMLRUN=ocamlrun NEW_OCAMLRUN=ocamlrun
 make ocamllex OCAMLRUN=ocamlrun NEW_OCAMLRUN=ocamlrun OCAMLYACC=ocamlyacc CAMLC="`which ocamlc`"
 make coldstart OCAMLRUN=ocamlrun NEW_OCAMLRUN=ocamlrun
 make runtime/libasmrun.a
+make runtime/libcomprmarsh.a
 
 echo "DEBUG START"
 echo "ocamlrun: "
@@ -40,8 +41,6 @@ echo $OPAM_PREFIX
 echo "FLEXDLL_DIR: "
 echo $FLEXDLL_DIR
 echo "DEBUG END"
-
-exit 42
 
 make library otherlibs opt ocamlnat ocaml ocamldoc ocamldebugger \
   OCAMLRUN=ocamlrun NEW_OCAMLRUN=ocamlrun \
