@@ -33,7 +33,14 @@ echo "ocamlrun: "
 echo `which ocamlrun`
 echo "ocamlmklib.exe: "
 echo `ls -la "${PWD}/tools/ocamlmklib.exe"`
+echo "HOST: "
+echo $HOST
+echo "OPAM_PREFIX: "
+echo $OPAM_PREFIX
+echo "FLEXDLL_DIR: "
+echo $FLEXDLL_DIR
 echo "DEBUG END"
+
 exit 42
 
 make library otherlibs opt ocamlnat ocaml ocamldoc ocamldebugger \
