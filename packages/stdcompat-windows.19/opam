@@ -8,7 +8,7 @@ license: "BSD-2-Clause"
 homepage: "https://github.com/thierry-martinez/stdcompat"
 bug-reports: "https://github.com/thierry-martinez/stdcompat/issues"
 depends: [
-  "ocaml-windows" {>= "3.07" & < "5.2"}
+  "ocaml-windows" {>= "3.07"}
   "dune" {>= "2.0"}
   "conf-autoconf-windows"
 ]
@@ -19,8 +19,8 @@ build: [
 dev-repo: "git+https://github.com/thierry-martinez/stdcompat.git"
 url {
   src:
-    "https://github.com/thierry-martinez/stdcompat/releases/download/v19/stdcompat-19.tar.gz"
+    "https://github.com/thierry-martinez/stdcompat/archive/d53390d788027fe0a2282c4745eb3d1626341f99/main.tar.gz"
   checksum: [
-    "sha512=25582731170f2f80eed281c48af4904d1d00ef88a38d1b17853395c19a326d7b11e42c17b69f639402c467ff6f9b83a2e9d4dbab7255ac25d466b85a55674bd0"
+  "sha512=07acb96b853d9691a44ece553d4cb4be30764d8c9cbd889c6c3bd4c315a55aab552c6e9c37caf3602693047f8c7cb3e6e3eab66eafe84161d27225d6d9144450"
   ]
 }
