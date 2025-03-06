@@ -1,0 +1,52 @@
+opam-version: "2.0"
+synopsis: "OCaml date time handling library"
+description: """
+
+Features:
+
+- Timestamp and date time handling with platform independent time zone support
+
+  - Subset of the IANA time zone database is built into this library
+
+- Supports Gregorian calendar date, ISO week date, and ISO ordinal date
+
+- Supports nanosecond precision
+
+- ISO8601 parsing and RFC3339 printing
+"""
+maintainer: ["Darren Ldl <darrenldldev@gmail.com>"]
+authors: ["Daypack developers"]
+license: "MIT"
+homepage: "https://github.com/daypack-dev/timere"
+bug-reports: "https://github.com/daypack-dev/timere/issues"
+depends: [
+  "ocaml-windows" {>= "4.08"}
+  "dune" {>= "2.9"}
+  "timedesc-tzdb-windows" {= version}
+  "timedesc-tzlocal-windows" {= version}
+  "seq-windows"
+  "angstrom-windows" {>= "0.15.0"}
+  "ptime-windows"
+  "result-windows" {>= "1.5"}
+]
+build: [
+  ["dune" "subst"] {dev}
+  [
+    "dune"
+    "build"
+    "-x"
+    "windows"
+    "-p"
+    "timedesc"
+    "-j"
+    jobs
+    "@install"
+  ]
+]
+dev-repo: "git+https://github.com/daypack-dev/timere.git"
+url {
+  src:
+    "https://github.com/daypack-dev/timere/releases/download/timedesc-3.1.0/timedesc-3.1.0.tar.gz"
+  checksum:
+    "sha256=9c469c849ca6242f133ff1dadab3855379f4f6bc559486589a04276223428871"
+}
